@@ -1,6 +1,7 @@
 INSERT INTO series (
   name, description, year_start, year_end
 )
+
 VALUES
 ('Laser and Linoleum', 'A series of linocuts created by carving digital drawings into linoleum.', 2016, 2018),
 ('20 Views of M', 'Twenty drawings from 5 poses of the model MH.', 2012, 2013),
