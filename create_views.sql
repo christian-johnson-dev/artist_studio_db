@@ -1,0 +1,1 @@
+\i views/people_organizations/query_all_organizations.sql
