@@ -7,6 +7,7 @@ CREATE DATABASE art_studio;
   \i tables/artworks/series.sql
   \i tables/artworks/artwork.sql 
   \i tables/people_organizations/organizations.sql
+  \i tables/people_organizations/org_locations.sql
   \i tables/people_organizations/people.sql
   \i tables/people_organizations/people_organizations.sql 
   \i tables/people_organizations/artwork_models.sql 
