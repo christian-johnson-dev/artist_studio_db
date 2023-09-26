@@ -6,16 +6,21 @@ CREATE TABLE emails (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   person_id INT REFERENCES people (id),
-  organization_id INT REFERENCES organizations (id),
+  org_location_id INT REFERENCES org_locations (id),
 
   -- * EMAIL
   email VARCHAR (255) NOT NULL UNIQUE,
   email_type VARCHAR (100) NOT NULL DEFAULT 'main',
 
+-- Either an organization or a person must be attached. Can't be none and can't be both.
 CHECK (
-  (CASE WHEN organization_id IS NOT NULL THEN 1 ELSE 0 END) +
+  (CASE WHEN org_location_id IS NOT NULL THEN 1 ELSE 0 END) +
   (CASE WHEN person_id IS NOT NULL THEN 1 ELSE 0 END) = 1
   )
 );
+
+-- * INDEXES
+CREATE INDEX idx_emails_person_id ON emails (person_id);
+CREATE INDEX idx_emails_org_location_id ON emails (org_location_id);
 
 -- Path: tables/people_organizations/contact_info/addresses.sql

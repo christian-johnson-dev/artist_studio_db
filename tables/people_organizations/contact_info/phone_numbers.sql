@@ -6,16 +6,20 @@ CREATE TABLE phone_numbers (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   person_id INT REFERENCES people (id),
-  organization_id INT REFERENCES organizations (id),
+  org_location_id INT REFERENCES org_locations (id),
 
   -- * PHONE NUMBER
   phone_number VARCHAR (255) NOT NULL UNIQUE,
   phone_type VARCHAR (100) NOT NULL DEFAULT 'main',
 
 CHECK (
-  (CASE WHEN organization_id IS NOT NULL THEN 1 ELSE 0 END) +
+  (CASE WHEN org_location_id IS NOT NULL THEN 1 ELSE 0 END) +
   (CASE WHEN person_id IS NOT NULL THEN 1 ELSE 0 END) = 1
   )
 );
+
+-- * INDEXES
+CREATE INDEX idx_phone_numbers_person_id ON phone_numbers (person_id);
+CREATE INDEX idx_phone_numbers_org_location_id ON phone_numbers (org_location_id);
 
 -- Path: tables/people_organizations/contact_info/phone_numbers.sql
