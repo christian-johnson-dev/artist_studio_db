@@ -1,6 +1,6 @@
 
 
--- 1. Insert 16 seed records into the organizations table
+-- 1. Insert 17 seed records into the organizations table
 INSERT INTO organizations (
   name, description
 )
@@ -20,15 +20,39 @@ VALUES
 ('Local Palette Gallery', 'Promotes local artists and features a range of styles and mediums.'),
 ('Contemporary Arts Museum', 'Focuses on contemporary art from the 21st century.'),
 ('Experimental Art Space', 'A gallery dedicated to experimental and avant-garde art.'),
-('Artworks Foundry', 'A bronze foundry that specializes in casting sculptures.');
+('Artworks Foundry', 'A bronze foundry that specializes in casting sculptures.'),
+('Blumenthal-Adler Gallery', 'A gallery with multiple locations featuring the most sought after artists.');
 
 
+-- 2. Insert 19 seed records into the org_locations table
+INSERT INTO org_locations (
+  organization_id, name
+)
+VALUES
+(1, NULL),
+(2, NULL),
+(3, NULL),
+(4, NULL),
+(5, NULL),
+(6, NULL),
+(7, NULL),
+(8, NULL),
+(9, NULL),
+(10, NULL),
+(11, NULL),
+(12, NULL),
+(13, NULL),
+(14, NULL),
+(15, NULL),
+(16, NULL),
+(17, 'Blumenthal-Alder: Portland'),
+(17, 'Blumenthal-Alder: Vancouver'),
+(17, 'Blumenthal-Alder: New York');
 
 
-
--- 2. Insert 16 seed records into the addresses table
+-- 3. Insert 19 seed records into the addresses table
 INSERT INTO addresses (
-  organization_id, address_type, line_1, line_2, city, prov_state, postal_zip, country, notes
+  org_location_id, address_type, line_1, line_2, city, prov_state, postal_zip, country, notes
 )
 VALUES
 (1, 'main', '123 Museum St.', NULL, 'New York', 'NY', '10001', 'USA', NULL),
@@ -46,12 +70,15 @@ VALUES
 (13, 'main', '1414 Palette Pl.', NULL, 'Atlanta', 'GA', '30301', 'USA', NULL),
 (14, 'main', '616 Modern Way', NULL, 'Seattle', 'WA', '98101', 'USA', NULL),
 (15, 'main', '505 Experiment St.', NULL, 'San Diego', 'CA', '92101', 'USA', NULL),
-(16, 'main', '404 Foundry Ave.', NULL, 'San Francisco', 'CA', '94101', 'USA', NULL);
+(16, 'main', '404 Foundry Ave.', NULL, 'San Francisco', 'CA', '94101', 'USA', NULL),
+(17, 'main', '212 Glisan St.', NULL, 'Portland', 'OR', '97201', 'USA', NULL),
+(18, 'main', '401 Market Ave.', NULL, 'Vancouver', 'WA', '98661', 'USA', NULL),
+(19, 'main', '919 Adler Ave.', NULL, 'New York', 'NY', '10013', 'USA', NULL);
 
 
---3. Insert 16 seed records into the phone_numbers table
+--4. Insert 19 seed records into the phone_numbers table
 INSERT INTO phone_numbers (
-  organization_id, phone_number, phone_type
+  org_location_id, phone_number, phone_type
 )
 VALUES
 (1, '212-555-0101', 'main'),
@@ -69,4 +96,32 @@ VALUES
 (13, '404-555-1300', 'main'),
 (14, '206-555-1400', 'main'),
 (15, '619-555-1500', 'main'),
-(16, '415-555-1600', 'main');
+(16, '415-555-1600', 'main'),
+(17, '503-555-1700', 'main'),
+(18, '360-555-1701', 'main'),
+(19, '212-555-1702', 'main');
+
+--5. Insert 19 seed records into the emails table
+INSERT INTO emails (
+  org_location_id, email, email_type
+)
+VALUES
+(1, 'info@citycentralmuseum.org', 'main'),
+(2, 'contact@uptownartgallery.com', 'main'),
+(3, 'inquiries@greenwoodfinearts.com', 'main'),
+(4, 'support@historicalartsmuseum.org', 'main'),
+(5, 'hello@downtownarthouse.com', 'main'),
+(6, 'services@riverfrontprintstudio.com', 'main'),
+(7, 'info@metromoderngallery.com', 'main'),
+(8, 'contactus@nationalheritagemuseum.gov', 'main'),
+(9, 'support@elitefinearts.com', 'main'),
+(10, 'info@culturalartsmuseum.org', 'main'),
+(11, 'submissions@suburbanartgallery.com', 'main'),
+(12, 'info@classicartsmuseum.org', 'main'),
+(13, 'artists@localpalettegallery.com', 'main'),
+(14, 'info@contemporaryartsmuseum.org', 'main'),
+(15, 'inquiry@experimentalartspace.com', 'main'),
+(16, 'orders@artworksfoundry.com', 'main'),
+(17, 'portland@blumenthal-adler.com', 'main'),
+(18, 'vancouver@blumenthal-adler.com', 'main'),
+(19, 'newyork@blumenthal-adler.com', 'main');
