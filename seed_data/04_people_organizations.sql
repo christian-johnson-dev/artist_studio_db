@@ -1,9 +1,9 @@
 -- Seeding the people_organizations table
-INSERT INTO people_organizations (people_id, organization_id, role) VALUES
+INSERT INTO people_organizations (people_id, org_location_id, role) VALUES
 -- 18 records in total
 
 -- People associated with one organization
-(1, 1, 'Director'),
+(20, 1, 'Director'),
 (2, 2, 'Docent'),
 (3, 3, 'Volunteer'),
 (4, 4, 'Art Historian'),
@@ -17,10 +17,16 @@ INSERT INTO people_organizations (people_id, organization_id, role) VALUES
 (12, 12, 'Exhibiting Artist'),
 (13, 13, 'Conservator'),
 (14, 14, 'Curator'),
+(15, 15, 'Art Collector'),
+(16, 16, 'Director'),
+(17, 17, 'Gallery Assistant'),
+(18, 18, 'Gallery Director'),
+(19, 19, 'Gallery Intern'),
 
 -- People associated with multiple organizations
-(1, 5, 'Board Member'),
+(20, 5, 'Board Member'),
 (2, 6, 'Board Member'),
 (3, 7, 'Board Member'),
 (9, 2, 'Board Member'),
-(1, 7, 'Advisory Council');
+(20, 7, 'Advisory Council'),
+(9, 17, 'Director');
