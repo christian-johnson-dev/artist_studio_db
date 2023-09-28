@@ -1,3 +1,4 @@
+------------------------ MEDIUMS -------------------------
 INSERT INTO mediums (name, description) VALUES
 ('charcoal', 'A form of dry art medium made of finely ground organic materials held together by gum or wax.'),
 ('graphite', 'A type of mineral used for drawing or sketching, usually in the form of a pencil.'),
@@ -22,16 +23,14 @@ INSERT INTO mediums (name, description) VALUES
 ('silver leaf', 'A thin foil applied to a surface in delicate sheets'),
 ('colored pencil', 'A pencil made of a narrow, pigmented core.  Pigments can be water soluble or oil based');
 
-
-
-
+------------------------- SUPPORTS -------------------------
 INSERT INTO supports (name, description) VALUES
 ('paper', 'A thin material made from fibers, commonly used for drawing, printing, and watercolor painting.'),
 ('canvas', 'A heavy-duty woven fabric used as a surface for painting, usually stretched over a frame.'),
 ('linen', 'A textile made from the fibers of the flax plant, used as a support for oil painting.'),
 ('panel', 'A flat, rigid surface, often made from wood, used as a support for painting or other art forms.');
 
-------------------------- SUPPORTS -------------------------
+------------------------- SUPPORT ARTWORK JOINS -------------------------
 -- Associating all drawings in the 'artwork' table with the paper support
 INSERT INTO artwork_support (artwork_id, support_id)
 SELECT a.id, s.id
@@ -55,15 +54,13 @@ WHERE a.category = 'painting'
   AND a.id NOT IN (3, 12, 21, 27, 41, 45);
 
 
-------------------------- MEDIUMS -------------------------
+------------------------- MEDIUM ARTWORK JOINS -------------------------
 -- Associating all drawings in the 'artwork' table with the charcoal medium
 INSERT INTO artwork_medium (artwork_id, medium_id, is_primary) 
 SELECT a.id, m.id, TRUE
 FROM artwork AS a, mediums AS m
 WHERE a.category = 'drawing' 
   AND m.name = 'charcoal';
-
-
 
 -- Associating select paintings in the 'artwork' table with the acrylic medium
 INSERT INTO artwork_medium (artwork_id, medium_id, is_primary)
@@ -76,7 +73,7 @@ WHERE a.id IN (3, 12, 21, 27, 41, 45)
 INSERT INTO artwork_medium (artwork_id, medium_id)
 SELECT a.id, m.id
 FROM artwork AS a, mediums AS m
-WHERE artwork.id IN (3, 12, 21, 27)
+WHERE a.id IN (3, 12, 21, 27)
   AND m.name = 'colored pencil';
 
 -- Associating remaining paintings in the 'artwork' table with the oil medium
@@ -87,10 +84,3 @@ WHERE
   a.category = 'painting'
   AND a.id NOT IN (3, 12, 21, 27, 41, 45)
   AND m.name = 'oil';
-
-
-
-
-
-
-
