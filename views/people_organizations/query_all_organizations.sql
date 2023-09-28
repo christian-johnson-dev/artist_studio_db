@@ -1,7 +1,7 @@
 CREATE OR REPLACE VIEW all_organizations AS
 SELECT
 	ol.id,
-	COALESCE(ol.name,og.name) AS name,
+	CONCAT_WS(': ', og.name,ol.name) AS name,
 	CONCAT_WS(', ', line_1, line_2),
 	city,
 	prov_state,
