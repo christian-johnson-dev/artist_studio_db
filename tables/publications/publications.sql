@@ -10,10 +10,11 @@ CREATE TABLE publications (
   -- * PUBLICATION
   title VARCHAR (255) NOT NULL,
   pub_date DATE NOT NULL ,
+  pages VARCHAR (20),
   include_short_bib BOOLEAN NOT NULL DEFAULT TRUE,
   include_full_bib BOOLEAN NOT NULL DEFAULT TRUE,
   url VARCHAR (255),
-  publication_type VARCHAR (100) NOT NULL DEFAULT 'book',
+  pub_type publication_type NOT NULL DEFAULT 'book',
   description TEXT
 );
 
