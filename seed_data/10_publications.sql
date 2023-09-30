@@ -22,7 +22,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES 
   (1, 22, 1); -- published by Art Squared
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES 
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES 
   (1, 18, 1); -- author Mia Fong
 
 
@@ -33,7 +33,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES 
   (2, 23, 1); -- published by Albion Journal
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES 
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES 
   (2, 21, 1); -- author Grace Rodriguez
 
 
@@ -44,7 +44,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (3, 18, 4), -- sponsored by Blumenthal-Adler
   (3, 24, 3); -- hosted at Cider Press
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (3, 1, 4), -- participant Josephine Bijoux
   (3, 9, 4), -- participant Haruki Sanzi
   (3, 16, 4), -- participant Noah Thompson
@@ -58,7 +58,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (4, 8, 1); -- published by Metro Modern Gallery
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (4, 24, 1); -- author Isabella Pojani
 
 
@@ -69,7 +69,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (5, 25, 2); -- broadcast by Mindful Radio
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (5, 13, 3), -- host Ethan Moore
   (5, 1, 4); -- participant Josephine Bijoux
 
@@ -81,7 +81,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (6, 21, 1); -- published by Monacelli Press
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (6, 18, 2), -- editor Mia Fong
   (6, 17, 1), -- author Lucas Garcia
   (6, 9, 6), -- artist Haruki Sanzi
@@ -97,7 +97,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (7, 23, 1); -- published by Albion Journal
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (7, 10, 1); -- author Liam Anderson
 
 
@@ -108,7 +108,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (8, 21, 1); -- published by Monacelli Press
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (8, 24, 2), -- editor Isabella Pojani
   (8, 2, 1), -- author Alice Johnson
   (8, 3, 1), -- author Rajesh Patel
@@ -127,7 +127,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (9, 18, 1); -- published by Blumenthal-Adler
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (9, 1, 1), -- host Josephine Bijoux
   (9, 32, 1); -- participant David Oiuko
 
@@ -139,7 +139,7 @@ INSERT INTO publications(title, pub_date, pages, url, pub_type, description) VAL
 INSERT INTO publications_organizations (publication_id, organization_id, role_id) VALUES
   (10, 9, 1); -- published by National Heritage Museum
 
-INSERT INTO publications_people (publication_id, people_id, role_id) VALUES
+INSERT INTO publications_people (publication_id, person_id, role_id) VALUES
   (10, 24, 1), -- author Isabella Pojani
   (10, 22, 1), -- author William Lewis
   (10, 20, 1), -- author Michael Brown
