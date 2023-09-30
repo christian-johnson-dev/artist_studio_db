@@ -9,11 +9,7 @@ CREATE OR REPLACE FUNCTION new_artwork_sculpture (
   p_weight_lbs NUMERIC (5, 2) DEFAULT NULL,
   p_pieces_number INT DEFAULT 1,
   p_signature signature_status DEFAULT 'unknown',
-  p_condition artwork_condition DEFAULT 'unknown',
-  --owner type is either 'person' or 'organization'
-  p_owner_type owner_type NOT NULL,
-  p_owner_id INT NOT NULL,
-  
+  p_condition artwork_condition DEFAULT 'unknown'
 )
 RETURNS VOID AS $$
 DECLARE
@@ -54,7 +50,9 @@ BEGIN
     width_in,
     depth_in,
     weight_lbs,
-    pieces_number
+    pieces_number,
+    condition,
+    signature
   )
   VALUES (
     v_new_catalog_number,
@@ -67,7 +65,9 @@ BEGIN
     p_width_in,
     p_depth_in,
     p_weight_lbs,
-    p_pieces_number
+    p_pieces_number,
+    p_condition,
+    p_signature
   );
 
 
