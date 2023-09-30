@@ -3,7 +3,7 @@ SELECT
 	pl.id AS id,
 	first_name,
 	last_name,
-	CONCAT_WS(', ', line_1, line_2),
+	CONCAT_WS(', ', line_1, line_2) AS address,
 	city,
 	prov_state,
 	postal_zip AS zip,
