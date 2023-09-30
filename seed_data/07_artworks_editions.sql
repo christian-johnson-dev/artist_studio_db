@@ -1,4 +1,4 @@
-------------------------------- Adding Twelve Easy Pieces -------------------------------
+------------------------------- Adding 'Twelve Easy Pieces' -------------------------------
 -- Add to artwork table
 
 INSERT INTO artwork (catalog_number, title, category, date_completed, height_in, width_in, series_id)
@@ -35,6 +35,24 @@ INSERT INTO edition_meta (artwork_id, manufacturer_id, total_cost, total_ed, tot
 SELECT a.id, 1, 40, 25, 0, 0, 5, 0, 0, 0, TRUE, 'Edition produced by artist, hand printed in studio.'
 FROM artwork AS a
 WHERE a.series_id = (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces');
+
+
+------------------------------- Adding Sculptures -------------------------------
+-- Add to artwork table
+SELECT new_artwork_sculpture(
+  p_completion_date := '2010-04-01',
+  p_date_circa := TRUE,
+  p_title := 'Torso 1',
+  p_height_in := 25,
+  p_width_in := 12,
+  p_depth_in := 10,
+  p_weight_lbs := 7.25,
+  p_pieces_number := 1,
+  p_signature := 'unsigned',
+  p_condition := 'good'
+);
+
+
 
 
 
