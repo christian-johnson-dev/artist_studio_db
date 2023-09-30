@@ -1,6 +1,5 @@
 -- Seeding the people_organizations table
 INSERT INTO people_organizations (people_id, org_location_id, role) VALUES
--- 18 records in total
 
 -- People associated with one organization
 (20, 1, 'Director'),
