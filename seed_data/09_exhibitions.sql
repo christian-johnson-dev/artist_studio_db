@@ -12,13 +12,13 @@ INSERT INTO exhibitions (title, type, include_short_bib, include_full_bib) VALUE
 INSERT INTO exhibitions_organizations (exhibition_id, org_location_id, opening_date, closing_date, is_primary) VALUES
   (1, 8, '2012-05-12', '2012-06-18', TRUE); -- Metro Modern Gallery
 
-INSERT INTO exhibitions_people (exhibition_id, role_id, people_id) VALUES
+INSERT INTO exhibitions_people (exhibition_id, role_id, person_id) VALUES
   (1, 1, 1), -- artist Josephine Bijoux
   (1, 1, 32), -- artist David Oiuko
   (1, 1, 16), -- artist Noah Thompson
   (1, 1, 25), -- artist Natalie Hall
   (1, 1, 7), -- artist Jin Kim
-  (1, 2, 12); -- curator Ari Tanakas
+  (1, 2, 12); -- curator Ari Tanaka
 
 
 --* EXHIBITION 2
@@ -26,7 +26,7 @@ INSERT INTO exhibitions (title, type, include_short_bib, include_full_bib) VALUE
   ('Float On', 'group', TRUE, TRUE);
 INSERT INTO exhibitions_organizations (exhibition_id, org_location_id, opening_date, closing_date, is_primary) VALUES
   (2, 8, '2012-03-10', '2012-4-25', TRUE); -- Metro Modern Gallery
-INSERT INTO exhibitions_people (exhibition_id, role_id, people_id) VALUES
+INSERT INTO exhibitions_people (exhibition_id, role_id, person_id) VALUES
   (2, 1, 1), -- artist Josephine Bijoux
   (2, 1, 8), -- artist Sophia Garcia
   (2, 1, 15), -- artist Ava Martin
@@ -39,7 +39,7 @@ INSERT INTO exhibitions (title, type, include_short_bib, include_full_bib) VALUE
   ('Josephine Bijoux: Recent Paintings', 'solo', TRUE, TRUE);
 INSERT INTO exhibitions_organizations (exhibition_id, org_location_id, opening_date, closing_date, is_primary) VALUES
   (3, 8, '2012-02-01', '2012-03-09', TRUE); -- Metro Modern Gallery
-INSERT INTO exhibitions_people (exhibition_id, role_id, people_id) VALUES
+INSERT INTO exhibitions_people (exhibition_id, role_id, person_id) VALUES
   (3, 1, 1); -- artist Josephine Bijoux
 
 
@@ -55,7 +55,7 @@ INSERT INTO exhibitions (title, type, include_short_bib, include_full_bib) VALUE
   ('Diverse Conclusions', 'group', TRUE, TRUE);
 INSERT INTO exhibitions_organizations (exhibition_id, org_location_id, opening_date, closing_date, is_primary) VALUES
   (5, 8, '2010-09-01', '2010-10-01', TRUE); -- 
-INSERT INTO exhibitions_people (exhibition_id, role_id, people_id) VALUES
+INSERT INTO exhibitions_people (exhibition_id, role_id, person_id) VALUES
   (5,1,1), -- artist Josephine Bijoux
   (5,1,13), -- artist Ethan Moore
   (5,1,6), --artist Sarah Davis
@@ -84,7 +84,7 @@ INSERT INTO exhibitions (title, type, include_short_bib, include_full_bib) VALUE
   ('Assisted Living', 'group', TRUE, TRUE);
 INSERT INTO exhibitions_organizations (exhibition_id, org_location_id, opening_date, closing_date, is_primary) VALUES
   (8, 19, '2014-01-01', '2014-02-01', TRUE); -- Blumenthal Adler Gallery: Vancouver
-INSERT INTO exhibitions_people (exhibition_id, role_id, people_id) VALUES
+INSERT INTO exhibitions_people (exhibition_id, role_id, person_id) VALUES
   (8,1,1), --artist Josephine Bijoux
   (8,1,6), -- artist Sarah Davis
   (8,1,15), -- artist Ava Martin
