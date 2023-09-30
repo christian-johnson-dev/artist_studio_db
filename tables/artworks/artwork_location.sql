@@ -1,4 +1,4 @@
---* The artwork_location table keeps track of the locations of either an artwork or an editioned artwork, along with the organizations or individuals responsible for them. It includes metadata fields, location types (e.g., 'on loan', 'in storage'), time-stamps for when the artwork was moved in and out, and constraints to ensure that each record is associated with either an artwork or an edition, and either an organization or a person.
+--* The artwork_location table keeps track of the locations of either an artwork or an editioned artwork, along with the organizations or individuals responsible for them. 
 
 CREATE TYPE location_type AS ENUM ('on loan', 
   'on consignment', 
@@ -21,25 +21,41 @@ CREATE TABLE artwork_location (
 
   -- * LOCATION RELATIONSHIP
   location_type location_type NOT NULL DEFAULT 'in storage',
-  out_date DATE NOT NULL,
-  in_date DATE CHECK (in_date >= out_date),
+  out_date DATE NOT NULL, -- required when leaving the studio
+  in_date DATE CHECK (in_date >= out_date), -- required when entering the studio
   due_date DATE CHECK (due_date >= in_date),
+  provenance_record BOOLEAN DEFAULT FALSE,
   notes TEXT,
 
+-- * CONSTRAINTS
 
+-- in_date conditionally required when it is brought into the studio (e.g. org_location_id = 1 or 21)
+CHECK (
+  CASE
+    WHEN org_location_id IN (1, 21) THEN in_date IS NOT NULL
+    ELSE TRUE
+  END
+),
+-- out_date conditionally required when it is anywhere but the studio (e.g. org_location_id <> 1 or 21)
+CHECK (
+  CASE
+    WHEN org_location_id NOT IN (1, 21) THEN out_date IS NOT NULL
+    ELSE TRUE
+  END
+),
 
-  -- Either an organization or a person must be present
+-- Either an organization or a person must be present
 CHECK (
   (CASE WHEN org_location_id IS NOT NULL THEN 1 ELSE 0 END) +
   (CASE WHEN person_id IS NOT NULL THEN 1 ELSE 0 END) = 1
 ),
-
-  -- Either an artwork or an edition must be present
+-- Either an artwork or an edition must be present
 CHECK (
   (CASE WHEN artwork_id IS NOT NULL THEN 1 ELSE 0 END) +
   (CASE WHEN edition_id IS NOT NULL THEN 1 ELSE 0 END) = 1
   )
 );
+
 
 -- * INDEXES
 CREATE INDEX idx_artwork_location_artwork_id ON artwork_location (artwork_id);
