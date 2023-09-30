@@ -34,7 +34,9 @@ CREATE DATABASE art_studio;
   \i tables/publications/publications_organizations.sql
   \i tables/publications/publications_artworks.sql
 -- COMMIT;
-
+  \i seed_database.sql
+  \i create_views.sql
+  \i functions/create_edition_all.sql
 -- Create the function that will update the updated_at column
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
