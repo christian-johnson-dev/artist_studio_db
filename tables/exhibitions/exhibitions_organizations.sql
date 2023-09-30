@@ -1,6 +1,6 @@
 -- * This table joins tables organizations and exhibitions.  It allows for multi-venue traveling exhibitions.
 
-CREATE TABLE exhibition_organizations (
+CREATE TABLE exhibitions_organizations (
   -- * METADATA
   exhibition_id INT REFERENCES exhibitions (id) NOT NULL,
   org_location_id INT REFERENCES org_locations (id) NOT NULL,
