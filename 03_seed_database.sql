@@ -3,5 +3,8 @@
 \i seed_data/03_people.sql
 \i seed_data/04_people_organizations.sql
 \i seed_data/05_artworks_originals.sql
-\i seed_data/06_supports_artwork.sql
+\i seed_data/06_supports_mediums.sql
 \i seed_data/07_artworks_editions.sql
+\i seed_data/08_artworks_locations.sql
+\i seed_data/09_exhibitions.sql
+\i seed_data/10_publications.sql

@@ -1,9 +1,6 @@
-DROP DATABASE IF EXISTS art_studio;
-
-CREATE DATABASE art_studio;
-\c art_studio;
--- BEGIN;
+--* ===== ENUMS =====
   \i enums/enums.sql
+--* ===== TABLES =====
   \i tables/artworks/series.sql
   \i tables/artworks/artwork.sql 
   \i tables/people_organizations/organizations.sql
@@ -33,32 +30,3 @@ CREATE DATABASE art_studio;
   \i tables/publications/publications_organizations_roles.sql
   \i tables/publications/publications_organizations.sql
   \i tables/publications/publications_artworks.sql
--- COMMIT;
-  \i seed_database.sql
-  \i create_views.sql
-  \i functions/create_edition_all.sql
--- Create the function that will update the updated_at column
-CREATE OR REPLACE FUNCTION update_updated_at_column()
-RETURNS TRIGGER AS $$
-BEGIN
-  NEW.updated_at = CURRENT_TIMESTAMP;
-  RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Create triggers for all tables in the public schema
-DO $$ 
-DECLARE 
-  table_name text;
-BEGIN 
-  FOR table_name IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') 
-  LOOP
-      EXECUTE 'CREATE TRIGGER update_' || table_name || '_modtime ' ||
-              'BEFORE UPDATE ON ' || table_name || ' ' ||
-              'FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();';
-  END LOOP;
-END;
-$$;
-
-
-
