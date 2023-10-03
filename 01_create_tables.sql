@@ -19,6 +19,7 @@
   \i tables/artworks/edition.sql
   \i tables/artworks/damage.sql
   \i tables/artworks/artwork_location.sql
+  \i tables/artworks/artwork_sequence.sql
   \i tables/exhibitions/exhibitions.sql 
   \i tables/exhibitions/exhibitions_people_roles.sql
   \i tables/exhibitions/exhibitions_artworks.sql
