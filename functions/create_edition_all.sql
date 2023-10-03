@@ -1,15 +1,17 @@
 CREATE OR REPLACE FUNCTION create_edition_records(
   p_edition_meta_id INT, -- The ID of the edition_meta record to quantify how many edition records to create
+  p_in_date DATE, -- The date the edition was brought into the studio
   p_signature signature_status DEFAULT 'unknown',
   p_available_purchase BOOLEAN DEFAULT TRUE,
   p_available_exhibition BOOLEAN DEFAULT TRUE,
   p_is_framed BOOLEAN DEFAULT FALSE,
-  p_condition artwork_condition DEFAULT 'unknown'
+  p_condition artwork_condition DEFAULT 'unknown',
 )
 RETURNS VOID AS $$
 DECLARE
   edition_meta_record edition_meta%ROWTYPE;
   existing_records INT;
+  v_new_edition_id INT;
 BEGIN
   -- Check if any edition records already exist for the edition_meta record
   SELECT COUNT(*) INTO existing_records FROM edition WHERE edition_meta_id = p_edition_meta_id;
@@ -29,7 +31,11 @@ BEGIN
   -- Create records for each edition type and their total counts
   FOR counter IN 1..edition_meta_record.total_ed LOOP
     INSERT INTO edition (edition_meta_id, type, number, signature, available_purchase, available_exhibition, is_framed, condition)
-    VALUES (p_edition_meta_id, 'ed', counter, p_signature, p_available_purchase, p_available_exhibition, p_is_framed, p_condition);
+    VALUES (p_edition_meta_id, 'ed', counter, p_signature, p_available_purchase, p_available_exhibition, p_is_framed, p_condition)
+    RETURNING id INTO v_new_edition_id;
+
+    INSERT INTO artwork_location (edition_id, org_location_id, location_type, in_date)
+    VALUES (v_new_edition_id, 1, 'in storage', p_in_date);
   END LOOP;
 
   FOR counter IN 1..edition_meta_record.total_pp LOOP
