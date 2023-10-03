@@ -1,56 +1,355 @@
 ------------------------------- Adding 'Twelve Easy Pieces' -------------------------------
--- Add to artwork table
 
-INSERT INTO artwork (catalog_number, title, category, date_completed, height_in, width_in, series_id)
-VALUES
-  ('2012.03.001', 'Number 1', 'printmaking', '2012-06-25', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.003', 'Number 3', 'printmaking', '2012-06-25', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.002', 'Number 2', 'printmaking', '2012-06-26', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.004', 'Number 4', 'printmaking', '2012-06-26', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.005', 'Number 5', 'printmaking', '2012-06-27', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.006', 'Number 6', 'printmaking', '2012-06-27', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.007', 'Number 7', 'printmaking', '2012-06-28', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.008', 'Number 8', 'printmaking', '2012-06-28', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.009', 'Number 9', 'printmaking', '2012-06-28', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.010', 'Number 10', 'printmaking', '2012-06-29', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.011', 'Number 11', 'printmaking', '2012-06-29', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')),
-  ('2012.03.012', 'Number 12', 'printmaking', '2012-06-30', 16, 12, (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'));
+--* =============== STEP 1: ADD EACH ARTWORK RECORD =============== *--
+-- Number 1
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-25',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 1',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
 
--- Add to artwork_support table
-INSERT INTO artwork_support (artwork_id, support_id)
-SELECT a.id, s.id
-FROM artwork AS a, supports AS s
-WHERE a.series_id = (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')
-  AND s.name = 'paper';
+-- Number 2
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-26',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 2',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
 
--- Add to artwork_medium table
-INSERT INTO artwork_medium (artwork_id, medium_id, is_primary)
-SELECT a.id, m.id, TRUE
-FROM artwork AS a, mediums AS m
-WHERE a.series_id = (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces')
-  AND m.name = 'linocut';
+-- Number 3
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-25',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 3',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
 
--- Add to edition_meta table
+-- Number 4
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-26',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 4',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
+
+-- Number 5
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-27',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 5',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
+
+-- Number 6
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-27',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 6',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
+
+-- Number 7
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-28',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 7',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
+
+-- Number 8
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-28',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 8',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
+
+-- Number 9
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-28',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 9',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := NULL,
+  p_weight_lbs := NULL,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}'
+  p_in_date := NULL
+);
+
+-- Number 10
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-29',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 10',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := 0,
+  p_weight_lbs := 0,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}',
+  p_in_date := NULL
+);
+
+-- Number 11
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-29',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 11',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := 0,
+  p_weight_lbs := 0,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}',
+  p_in_date := NULL
+);
+
+-- Number 12
+SELECT new_artwork (
+  p_category := 'printmaking',
+  p_completion_date := '2012-06-30',
+  p_support_names := '{paper}',
+  p_date_circa := FALSE,
+  p_title := 'Number 12',
+  p_series_id := (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces'),
+  p_height_in := 16,
+  p_width_in := 12,
+  p_depth_in := 0,
+  p_weight_lbs := 0,
+  p_pieces_number := 1,
+  p_signature := 'signed',
+  p_condition := 'excellent',
+  p_medium_names := '{linocut}',
+  p_in_date := NULL
+);
+
+--* =============== STEP 2: Create edition_meta record for each =============== *--
+-- Add each to edition_meta table
 INSERT INTO edition_meta (artwork_id, manufacturer_id, total_cost, total_ed, total_pp, total_hc, total_ap, total_tp, total_bat, total_st, is_completed, notes)
 SELECT a.id, 1, 40, 25, 0, 0, 5, 0, 0, 0, TRUE, 'Edition produced by artist, hand printed in studio.'
 FROM artwork AS a
 WHERE a.series_id = (SELECT id FROM series WHERE series.name = 'Twelve Easy Pieces');
 
+--* =============== STEP 3: Create records for each piece of the edition  =============== *--
+-- Add each to edition table
+DO $$
+DECLARE
+  em_id INTEGER;
+  comp_date DATE;
+BEGIN
+  --Number 1
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 1';
 
-------------------------------- Adding Sculptures -------------------------------
--- Add to artwork table
-SELECT new_artwork_sculpture(
-  p_completion_date := '2010-04-01',
-  p_date_circa := TRUE,
-  p_title := 'Torso 1',
-  p_height_in := 25,
-  p_width_in := 12,
-  p_depth_in := 10,
-  p_weight_lbs := 7.25,
-  p_pieces_number := 1,
-  p_signature := 'unsigned',
-  p_condition := 'good'
-);
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 2
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 2';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 3
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 3';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+  
+  --Number 4
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 4';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+  
+  --Number 5
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 5';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 6
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 6';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 7
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 7';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 8
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 8';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 9
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 9';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 10
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 10';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 11
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 11';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+  --Number 12
+  SELECT em.id, a.date_completed INTO em_id, comp_date
+  FROM edition_meta AS em
+  JOIN artwork AS a ON a.id = em.artwork_id
+  WHERE a.title = 'Number 12';
+
+  SELECT create_edition_all (em_id, comp_date, 'signed', TRUE, TRUE, FALSE, 'excellent');
+
+END $$;
+
+
+
+
+
+
+
+
+
+
 
 
 
