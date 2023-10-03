@@ -2,7 +2,8 @@
 CREATE TYPE signature_status AS ENUM (
   'signed',
   'unsigned',
-  'unknown'
+  'unknown',
+  'NA'
 );
 
 CREATE TYPE artwork_condition AS ENUM (
@@ -10,7 +11,8 @@ CREATE TYPE artwork_condition AS ENUM (
   'good',
   'damaged',
   'destroyed',
-  'unknown'
+  'unknown',
+  'NA'
 );
 
 
