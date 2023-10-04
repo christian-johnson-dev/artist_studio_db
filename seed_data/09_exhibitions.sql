@@ -1,10 +1,19 @@
---* EXHIBITION PEOPLE ROLES
+/** SEED DATA FOR EXHIBITIONS
+ * 1. EXHIBITION_PEOPLE_ROLES TABLE
+ * 2. Each exhibition uses a sequential combination of the following tables:
+ *    EXHIBITIONS, EXHIBITIONS_ORGANIZATIONS, EXHIBITIONS_PEOPLE
+ */
+
+
+
+--*1. ========== EXHIBITION PEOPLE ROLES TABLE ==========
 INSERT INTO exhibitions_people_roles( role, description ) VALUES 
   ('Artist', 'A participating artist'),
   ('Curator', 'A person who develops the exhibition theme and selects artists the exhibition.'),
   ('Juror', 'A person who selects the artists for the exhibition.');
 
 
+--*2. ========== EXHIBITIONS / EXHIBITIONS_ORGANIZATIONS / EXHIBITIONS_PEOPLE TABLES ==========
 --* EXHIBITION 1
 INSERT INTO exhibitions (title, type, include_short_bib, include_full_bib) VALUES
   ('Road Rage', 'group', TRUE, TRUE);
