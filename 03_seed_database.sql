@@ -2,9 +2,11 @@
 \i seed_data/02_organizations.sql
 \i seed_data/03_people.sql
 \i seed_data/04_people_organizations.sql
-\i seed_data/05_artworks_originals.sql
-\i seed_data/06_supports_mediums.sql
-\i seed_data/07_artworks_editions.sql
-\i seed_data/08_artworks_locations.sql
+\i seed_data/05_supports_mediums.sql
+\i seed_data/06_artworks_originals.sql
+\i seed_data/07_artworks_editions_12EP.sql
+\i seed_data/08_artworks_editions_sculpture.sql
 \i seed_data/09_exhibitions.sql
 \i seed_data/10_publications.sql
+\i seed_data/11_artwork_exhibitions.sql
+\i seed_data/12_artwork_publications.sql
