@@ -21,7 +21,7 @@ CREATE TABLE artwork_location (
 
   -- * LOCATION RELATIONSHIP
   location_type location_type NOT NULL DEFAULT 'in storage',
-  out_date DATE NOT NULL, -- required when leaving the studio
+  out_date DATE, -- required when leaving the studio
   in_date DATE CHECK (in_date >= out_date), -- required when entering the studio
   due_date DATE,
   provenance_record BOOLEAN DEFAULT FALSE,
