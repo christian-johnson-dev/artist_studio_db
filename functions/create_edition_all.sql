@@ -5,7 +5,7 @@ CREATE OR REPLACE FUNCTION create_edition_records(
   p_available_purchase BOOLEAN DEFAULT TRUE,
   p_available_exhibition BOOLEAN DEFAULT TRUE,
   p_is_framed BOOLEAN DEFAULT FALSE,
-  p_condition artwork_condition DEFAULT 'unknown',
+  p_condition artwork_condition DEFAULT 'unknown'
 )
 RETURNS VOID AS $$
 DECLARE
