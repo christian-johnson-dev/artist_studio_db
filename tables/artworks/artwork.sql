@@ -23,9 +23,9 @@ CREATE TABLE artwork (
     date_completed DATE NOT NULL CHECK (date_completed <= CURRENT_DATE),
     date_circa BOOLEAN DEFAULT FALSE,
     -- * MEASUREMENTS
-    height_in NUMERIC(8, 4) CONSTRAINT valid_height_fractions CHECK (height_in >= 0 AND (height_in - TRUNC(height_in)) * 16 BETWEEN 0 AND 15),
-    width_in NUMERIC(8, 4) CONSTRAINT valid_width_fractions CHECK (width_in >= 0 AND (width_in - TRUNC(width_in)) * 16 BETWEEN 0 AND 15),
-    depth_in NUMERIC(8, 3) NULL CONSTRAINT valid_depth_fractions CHECK (depth_in IS NULL OR (depth_in - TRUNC(depth_in)) * 16 BETWEEN 0 AND 15),
+    height_in NUMERIC(8, 4) CONSTRAINT valid_height_fractions CHECK (is_valid_fraction(height_in)),
+    width_in NUMERIC(8, 4) CONSTRAINT valid_width_fractions CHECK (is_valid_fraction(width_in)),
+    depth_in NUMERIC(8, 4) NULL CONSTRAINT valid_depth_fractions CHECK (depth_in IS NULL OR is_valid_fraction(depth_in)),
     weight_lbs NUMERIC(5, 2),
     pieces_number INT DEFAULT 1 CHECK (pieces_number >= 1),
     size_approximate BOOLEAN DEFAULT FALSE,

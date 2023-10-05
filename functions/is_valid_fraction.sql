@@ -2,6 +2,7 @@
 CREATE OR REPLACE FUNCTION is_valid_fraction (value NUMERIC) RETURNS BOOLEAN AS $$
 BEGIN
     RETURN 
+        value >=0  -- This checks to see if the number is positive.
         (value - TRUNC(value)) * 16 BETWEEN 0 AND 15  -- This checks to see if the decimal is in the range of 0/16 to 15/16, inclusive.
         AND
         FLOOR((value - TRUNC(value)) * 16) = (value - TRUNC(value)) * 16; -- This checks to see if the decimal is a multiple of 1/16.
