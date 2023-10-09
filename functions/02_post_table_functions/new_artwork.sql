@@ -13,7 +13,7 @@ CREATE OR REPLACE FUNCTION new_artwork(
   p_signature signature_status DEFAULT 'unknown',
   p_condition artwork_condition DEFAULT 'unknown',
   p_medium_names TEXT[] DEFAULT NULL,
-  p_in_date DATE DEFAULT NULL
+  p_movement_date DATE DEFAULT NULL
   )
 RETURNS VOID AS $$
 DECLARE
@@ -37,9 +37,9 @@ BEGIN
     RAISE EXCEPTION 'SUPPORT ERROR: p_support_names cannot be NULL';
   END IF;
 
-  -- Set p_in_date to p_completion_date if NULL
-  IF p_in_date IS NULL THEN
-    p_in_date := p_completion_date;
+  -- Set p_movement_date to p_completion_date if NULL
+  IF p_movement_date IS NULL THEN
+    p_movement_date := p_completion_date;
   END IF;
 
   -- Insert the new artwork record
@@ -99,7 +99,7 @@ BEGIN
     END IF;
   END LOOP;
   -- Insert into artwork_location as in studio
-  INSERT INTO artwork_location (artwork_id, org_location_id, location_type, in_date, provenance_record)
-  VALUES (v_artwork_id, 1, 'in storage', p_in_date, TRUE);
+  INSERT INTO artwork_location (artwork_id, org_location_id, location_type, movement_date, provenance_record, is_current_location)
+  VALUES (v_artwork_id, 1, 'in storage', p_movement_date, TRUE, TRUE);
 END;
 $$ LANGUAGE plpgsql;
