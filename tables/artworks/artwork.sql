@@ -30,18 +30,15 @@ CREATE TABLE artwork (
     pieces_number INT DEFAULT 1 CHECK (pieces_number >= 1),
     size_approximate BOOLEAN DEFAULT FALSE,
     size_irregular BOOLEAN DEFAULT FALSE,
-    -- * MARKINGS
-    signature signature_status DEFAULT 'unknown' NOT NULL,
-    signature_location VARCHAR(255),
-    inscription VARCHAR(255),
-    inscriptions_location VARCHAR(255),
-    -- * STATUS
-    available_exhibition BOOLEAN DEFAULT TRUE NOT NULL,
-    available_purchase BOOLEAN DEFAULT TRUE NOT NULL,
-    CONDITION artwork_condition DEFAULT 'unknown' NOT NULL,
-    storage_location VARCHAR(255),
-    is_framed BOOLEAN DEFAULT FALSE NOT NULL,
+    -- * ANCILLARY
+    singular_attributes_id INT REFERENCES singular_attributes (id),
+    artwork_storage_id INT REFERENCES artwork_storage (id),
     CHECK ((category = 'sculpture' AND depth_in > 0) OR (category != 'sculpture' AND (depth_in IS NULL OR depth_in > 0)))
+    -- * INDEXES
+    CREATE INDEX singular_attributes_id_idx ON artwork (singular_attributes_id)
 );
+
+
+
 
 -- Path: tables/artworks/artwork.sql
