@@ -21,28 +21,13 @@ CREATE TABLE artwork_location (
 
   -- * LOCATION RELATIONSHIP
   location_type location_type NOT NULL DEFAULT 'in storage',
-  out_date DATE, -- required when leaving the studio
-  in_date DATE CHECK (in_date >= out_date), -- required when entering the studio
+  is_current_location BOOLEAN DEFAULT FALSE,
+  movement_date DATE,
   due_date DATE,
   provenance_record BOOLEAN DEFAULT FALSE,
   notes TEXT
 
 -- * CONSTRAINTS
-
--- in_date conditionally required when it is brought into the studio (e.g. org_location_id = 1 or 21)
-CHECK (
-  CASE
-    WHEN org_location_id IN (1, 21) THEN in_date IS NOT NULL
-    ELSE TRUE
-  END
-),
--- out_date conditionally required when it is anywhere but the studio (e.g. org_location_id <> 1 or 21)
-CHECK (
-  CASE
-    WHEN org_location_id NOT IN (1, 21) THEN out_date IS NOT NULL
-    ELSE TRUE
-  END
-),
 
 -- Either an organization or a person must be present
 CHECK (
