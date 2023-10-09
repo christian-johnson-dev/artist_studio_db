@@ -22,7 +22,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );  
 
 -- Sculpture 2
@@ -41,7 +41,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Sculpture 3
@@ -60,7 +60,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 --* 2. EDITION_META TABLE
@@ -117,7 +117,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 
