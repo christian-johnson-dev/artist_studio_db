@@ -1,5 +1,3 @@
-DROP VIEW IF EXISTS short_exhibitions;
-
 CREATE VIEW
     short_exhibitions AS
 WITH numbered_exhibitions AS (
