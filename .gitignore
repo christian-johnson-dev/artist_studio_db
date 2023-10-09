@@ -88,4 +88,5 @@ __pycache__/
 /test/version_tmp/
 tmp/
 
+archive/
 # End of .gitignore
