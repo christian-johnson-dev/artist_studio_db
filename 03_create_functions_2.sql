@@ -1,0 +1,7 @@
+\i functions/02_post_table_functions/create_edition_all.sql
+\i functions/02_post_table_functions/create_trigger_updated_at.sql
+\i functions/02_post_table_functions/generate_catalog_number.sql
+\i functions/02_post_table_functions/update_last_sequence.sql
+\i functions/02_post_table_functions/new_artwork.sql
+\i functions/02_post_table_functions/enum_to_int.sql
+\i functions/02_post_table_functions/update_current_location.sql
