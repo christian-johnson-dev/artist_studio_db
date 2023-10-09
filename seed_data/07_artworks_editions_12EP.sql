@@ -22,7 +22,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 2
@@ -41,7 +41,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 3
@@ -60,7 +60,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 4
@@ -79,7 +79,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 5
@@ -98,7 +98,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 6
@@ -117,7 +117,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 7
@@ -136,7 +136,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 8
@@ -155,7 +155,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 9
@@ -174,7 +174,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 10
@@ -193,7 +193,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 11
@@ -212,7 +212,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 -- Number 12
@@ -231,7 +231,7 @@ SELECT new_artwork (
   p_signature := 'signed',
   p_condition := 'excellent',
   p_medium_names := '{linocut}',
-  p_in_date := NULL
+  p_movement_date := NULL
 );
 
 --* 2. ============ EDITION META TABLE ============ *--
