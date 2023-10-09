@@ -22,7 +22,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 2
@@ -42,7 +42,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 3
@@ -62,7 +62,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 4
@@ -82,7 +82,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 5
@@ -102,7 +102,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 6
@@ -122,7 +122,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 7
@@ -142,7 +142,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 8
@@ -162,7 +162,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 9
@@ -182,7 +182,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 10
@@ -195,14 +195,14 @@ SELECT
         p_title := 'Concertina 1',
         p_series_id := NULL,
         p_height_in := 19,
-        p_width_in := 24.325,
+        p_width_in := 24.375,
         p_depth_in := NULL,
         p_weight_lbs := NULL,
         p_pieces_number := 1,
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 11
@@ -222,7 +222,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 12
@@ -242,7 +242,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 13
@@ -262,7 +262,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 14
@@ -282,7 +282,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 15
@@ -302,7 +302,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 16
@@ -322,7 +322,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 17
@@ -342,7 +342,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 18
@@ -362,7 +362,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 19
@@ -382,7 +382,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 20
@@ -402,7 +402,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 21
@@ -422,7 +422,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 22
@@ -442,7 +442,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 23
@@ -462,7 +462,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 24
@@ -482,7 +482,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 25
@@ -502,7 +502,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 26
@@ -522,7 +522,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 27
@@ -542,7 +542,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 28
@@ -562,7 +562,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 29
@@ -582,7 +582,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 30
@@ -602,7 +602,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 31
@@ -622,7 +622,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 32
@@ -642,7 +642,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 33
@@ -662,7 +662,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 34
@@ -682,7 +682,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 35
@@ -702,7 +702,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'good',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 36
@@ -722,7 +722,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 37
@@ -742,7 +742,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 38
@@ -762,7 +762,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 39
@@ -782,7 +782,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 40
@@ -802,7 +802,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 41
@@ -822,7 +822,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{oil}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 42
@@ -835,14 +835,14 @@ SELECT
         p_title := 'Concertina 6',
         p_series_id := NULL,
         p_height_in := 19,
-        p_width_in := 24.325,
+        p_width_in := 24.375,
         p_depth_in := NULL,
         p_weight_lbs := NULL,
         p_pieces_number := 1,
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 43
@@ -862,7 +862,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 44
@@ -882,7 +882,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 45
@@ -902,7 +902,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 46
@@ -922,7 +922,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 47
@@ -942,7 +942,7 @@ SELECT
         p_signature := 'signed',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 48
@@ -962,7 +962,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 49
@@ -982,7 +982,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'excellent',
         p_medium_names := '{charcoal}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- Artwork 50
@@ -1002,7 +1002,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'excellent',
         p_medium_names := '{acrylic}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 -- * 2. ============ ARTWORK TABLE  -- 20 views of M ============ *--
@@ -1022,7 +1022,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1041,7 +1041,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1060,7 +1060,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1079,7 +1079,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1098,7 +1098,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1117,7 +1117,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1136,7 +1136,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1155,7 +1155,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1174,7 +1174,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1193,7 +1193,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1212,7 +1212,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1231,7 +1231,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1250,7 +1250,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1269,7 +1269,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1288,7 +1288,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1307,7 +1307,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1326,7 +1326,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1345,7 +1345,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1364,7 +1364,7 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
 
 SELECT
@@ -1383,5 +1383,5 @@ SELECT
         p_signature := 'unsigned',
         p_condition := 'good',
         p_medium_names := '{charcoal, graphite}',
-        p_in_date := NULL
+        p_movement_date := NULL
     );
