@@ -20,12 +20,15 @@ CREATE TABLE edition (
   -- * PIECE INFO
   type edition_type NOT NULL,
   number INT CHECK (number >= 0) NOT NULL,
-  signature signature_status DEFAULT 'unknown' NOT NULL, -- signature_status is in enums.sql
-  available_purchase BOOLEAN DEFAULT TRUE NOT NULL,
-  available_exhibition BOOLEAN DEFAULT TRUE NOT NULL,
-  is_framed BOOLEAN DEFAULT FALSE NOT NULL,
-  condition artwork_condition DEFAULT 'unknown' NOT NULL
+  singular_attributes_id INT REFERENCES singular_attributes (id),
+  artwork_storage_id INT REFERENCES artwork_storage (id),
+  notes TEXT,
+  -- ensures the edition type and number are unique within the edition 
+  UNIQUE (edition_meta_id, type, number)
 );
+
+--* INDEXES
+CREATE INDEX ON edition (edition_meta_id);
 
 
 -- *  The function 'check_edition_totals' and its trigger enforce the consistency of edition numbers with the totals defined in the 'edition_meta' table.
