@@ -6,7 +6,7 @@
 
 CREATE OR REPLACE FUNCTION is_valid_fraction (value NUMERIC) RETURNS BOOLEAN AS $$
 BEGIN
-    RETURN 
+RETURN 
         value >=0  AND
         (value - TRUNC(value)) * 16 BETWEEN 0 AND 15
         AND
