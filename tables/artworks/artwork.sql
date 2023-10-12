@@ -1,4 +1,5 @@
--- * The 'artwork' table stores essential details about each artwork, including its identification, measurements, markings, and current status.
+-- * The 'artwork' table stores essential details about each artwork, including its identification, and measurements.
+
 CREATE TYPE artwork_category AS ENUM (
     'drawing',
     'painting',
@@ -14,7 +15,7 @@ CREATE TABLE artwork (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     -- * IDENTIFICATION
-    catalog_number VARCHAR(14) NOT NULL UNIQUE,
+    catalog_number CHAR(14) NOT NULL UNIQUE,
     title VARCHAR(255) DEFAULT 'Untitled' NOT NULL,
     series_id INT REFERENCES series (id),
     category artwork_category NOT NULL,
@@ -23,9 +24,9 @@ CREATE TABLE artwork (
     date_completed DATE NOT NULL CHECK (date_completed <= CURRENT_DATE),
     date_circa BOOLEAN DEFAULT FALSE,
     -- * MEASUREMENTS
-    height_in NUMERIC(8, 4) CONSTRAINT valid_height_fractions CHECK (is_valid_fraction(height_in)),
-    width_in NUMERIC(8, 4) CONSTRAINT valid_width_fractions CHECK (is_valid_fraction(width_in)),
-    depth_in NUMERIC(8, 4) NULL CONSTRAINT valid_depth_fractions CHECK (depth_in IS NULL OR is_valid_fraction(depth_in)),
+    height_in NUMERIC(8, 4) NOT NULL CONSTRAINT valid_height_fractions CHECK (is_valid_fraction(height_in)),
+    width_in NUMERIC(8, 4) NOT NULL CONSTRAINT valid_width_fractions CHECK (is_valid_fraction(width_in)),
+    depth_in NUMERIC(8, 4) DEFAULT NULL CONSTRAINT valid_depth_fractions CHECK (depth_in IS NULL OR is_valid_fraction(depth_in)),
     weight_lbs NUMERIC(5, 2),
     pieces_number INT DEFAULT 1 CHECK (pieces_number >= 1),
     size_approximate BOOLEAN DEFAULT FALSE,
@@ -37,8 +38,5 @@ CREATE TABLE artwork (
     -- * INDEXES
     CREATE INDEX singular_attributes_id_idx ON artwork (singular_attributes_id)
 );
-
-
-
 
 -- Path: tables/artworks/artwork.sql
