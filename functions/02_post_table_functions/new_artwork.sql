@@ -20,6 +20,7 @@ DECLARE
   v_artwork_id INT;
   v_medium_id INT;
   v_support_id INT;
+  v_singular_attributes_id INT;
   v_medium_name TEXT;
   v_support_name TEXT;
 
@@ -41,6 +42,16 @@ BEGIN
   IF p_movement_date IS NULL THEN
     p_movement_date := p_completion_date;
   END IF;
+  -- Insert the new singular attributes record
+  INSERT INTO singular_attributes (
+    signature,
+    condition
+  )
+  VALUES (
+    p_signature,
+    p_condition
+  )
+  RETURNING id INTO v_singular_attributes_id;  -- Captures new singular attributes' id
 
   -- Insert the new artwork record
   INSERT INTO artwork (
@@ -54,8 +65,7 @@ BEGIN
     depth_in,
     weight_lbs,
     pieces_number,
-    condition,
-    signature
+    singular_attributes_id
   )
   VALUES (
     p_title,
@@ -68,8 +78,7 @@ BEGIN
     p_depth_in,
     p_weight_lbs,
     p_pieces_number,
-    p_condition,
-    p_signature
+    v_singular_attributes_id
   )
   RETURNING id INTO v_artwork_id;  -- Captures new artwork's id
 
