@@ -34,9 +34,8 @@ CREATE TABLE artwork (
     -- * ANCILLARY
     singular_attributes_id INT REFERENCES singular_attributes (id),
     artwork_storage_id INT REFERENCES artwork_storage (id),
-    CHECK ((category = 'sculpture' AND depth_in > 0) OR (category != 'sculpture' AND (depth_in IS NULL OR depth_in > 0)))
-    -- * INDEXES
-    CREATE INDEX singular_attributes_id_idx ON artwork (singular_attributes_id)
+    CHECK ((category = 'sculpture' AND depth_in > 0) OR (category != 'sculpture' AND (depth_in IS NULL OR depth_in > 0))) 
 );
-
+-- * INDEXES
+CREATE INDEX singular_attributes_id_idx ON artwork (singular_attributes_id)
 -- Path: tables/artworks/artwork.sql
