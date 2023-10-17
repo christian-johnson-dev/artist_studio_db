@@ -235,7 +235,7 @@ SELECT new_artwork (
 );
 
 --* 2. ============ EDITION META TABLE ============ *--
--- Add each to edition_meta table
+-- Create records in edition_meta table for all newly created artworks in the 'Twelve Easy Pieces' series
 INSERT INTO edition_meta (artwork_id, manufacturer_id, total_cost, total_ed, total_pp, total_hc, total_ap, total_tp, total_bat, total_st, is_completed, notes)
 SELECT a.id, 1, 40, 25, 0, 0, 5, 0, 0, 0, TRUE, 'Edition produced by artist, hand printed in studio.'
 FROM artwork AS a
