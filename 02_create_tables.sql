@@ -2,6 +2,8 @@
   \i enums/enums.sql
 --* ===== TABLES =====
   \i tables/artworks/series.sql
+  \i tables/artworks/singular_attributes.sql
+  \i tables/artworks/artwork_storage.sql
   \i tables/artworks/artwork.sql 
   \i tables/people_organizations/organizations.sql
   \i tables/people_organizations/org_locations.sql
