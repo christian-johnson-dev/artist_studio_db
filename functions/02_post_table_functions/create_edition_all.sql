@@ -37,7 +37,7 @@ BEGIN
     VALUES (p_signature, p_available_purchase, p_available_exhibition, p_is_framed, p_condition)
     RETURNING id INTO v_new_sing_attr_id;
     -- 2. Insert into edition table
-    INSERT INTO edition (edition_meta_id, type, number, singular_attributes)
+    INSERT INTO edition (edition_meta_id, type, number, singular_attributes_id)
     VALUES (p_edition_meta_id, 'ed', counter, v_new_sing_attr_id)
     RETURNING id INTO v_new_edition_id;
     -- 3. Insert into artwork_location assigning location to studio
@@ -50,7 +50,7 @@ BEGIN
     INSERT INTO singular_attributes (signature, available_purchase, available_exhibition, is_framed, condition)
     VALUES (p_signature, p_available_purchase, p_available_exhibition, p_is_framed, p_condition)
     RETURNING id INTO v_new_sing_attr_id;
-    INSERT INTO edition (edition_meta_id, type, number, singular_attributes)
+    INSERT INTO edition (edition_meta_id, type, number, singular_attributes_id)
     VALUES (p_edition_meta_id, 'pp', counter, v_new_sing_attr_id)
     RETURNING id INTO v_new_edition_id;
     INSERT INTO artwork_location (edition_id, org_location_id, location_type, movement_date, is_current_location)
@@ -62,7 +62,7 @@ BEGIN
     INSERT INTO singular_attributes (signature, available_purchase, available_exhibition, is_framed, condition)
     VALUES (p_signature, p_available_purchase, p_available_exhibition, p_is_framed, p_condition)
     RETURNING id INTO v_new_sing_attr_id;
-    INSERT INTO edition (edition_meta_id, type, number, singular_attributes)
+    INSERT INTO edition (edition_meta_id, type, number, singular_attributes_id)
     VALUES (p_edition_meta_id, 'hc', counter, v_new_sing_attr_id)
     RETURNING id INTO v_new_edition_id;
     INSERT INTO artwork_location (edition_id, org_location_id, location_type, movement_date, is_current_location)
@@ -74,7 +74,7 @@ BEGIN
     INSERT INTO singular_attributes (signature, available_purchase, available_exhibition, is_framed, condition)
     VALUES (p_signature, p_available_purchase, p_available_exhibition, p_is_framed, p_condition)
     RETURNING id INTO v_new_sing_attr_id;
-    INSERT INTO edition (edition_meta_id, type, number, singular_attributes)
+    INSERT INTO edition (edition_meta_id, type, number, singular_attributes_id)
     VALUES (p_edition_meta_id, 'ap', counter, v_new_sing_attr_id)
     RETURNING id INTO v_new_edition_id;
     INSERT INTO artwork_location (edition_id, org_location_id, location_type, movement_date, is_current_location)
@@ -110,7 +110,7 @@ BEGIN
     INSERT INTO singular_attributes (signature, available_purchase, available_exhibition, is_framed, condition)
     VALUES (p_signature, p_available_purchase, p_available_exhibition, p_is_framed, p_condition)
     RETURNING id INTO v_new_sing_attr_id;
-    INSERT INTO edition (edition_meta_id, type, number, singular_attributes)
+    INSERT INTO edition (edition_meta_id, type, number, singular_attributes_id)
     VALUES (p_edition_meta_id, 'st', counter, v_new_sing_attr_id)
     RETURNING id INTO v_new_edition_id;
     INSERT INTO artwork_location (edition_id, org_location_id, location_type, movement_date, is_current_location)
