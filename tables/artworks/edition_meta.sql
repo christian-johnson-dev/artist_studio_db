@@ -13,16 +13,19 @@ CREATE TABLE edition_meta (
 
   -- * EDITION INFO
   total_cost NUMERIC (10, 2) CHECK (total_cost >= 0),
-  total_ed INT CHECK (total_ed >= 0) NOT NULL,
-  total_pp INT CHECK (total_pp >= 0) NOT NULL,
-  total_hc INT CHECK (total_hc >= 0) NOT NULL,
-  total_ap INT CHECK (total_ap >= 0) NOT NULL,
-  total_tp INT CHECK (total_tp >= 0) NOT NULL,
-  total_bat INT CHECK (total_bat >= 0) NOT NULL,
-  total_st INT CHECK (total_st >= 0) NOT NULL,
+  total_ed INT CHECK (total_ed >= 0) DEFAULT 0 NOT NULL,
+  total_pp INT CHECK (total_pp >= 0) DEFAULT 0 NOT NULL,
+  total_hc INT CHECK (total_hc >= 0) DEFAULT 0 NOT NULL,
+  total_ap INT CHECK (total_ap >= 0) DEFAULT 0 NOT NULL,
+  total_tp INT CHECK (total_tp >= 0) DEFAULT 0 NOT NULL,
+  total_bat INT CHECK (total_bat >= 0) DEFAULT 0 NOT NULL,
+  total_st INT CHECK (total_st >= 0) DEFAULT 0 NOT NULL,
   is_completed BOOLEAN DEFAULT TRUE NOT NULL,
   notes TEXT
 );
+
+-- * INDEXES
+CREATE INDEX artwork_id_idx ON edition_meta (artwork_id);
 
 -- Path: tables/artworks/editions.sql
 
