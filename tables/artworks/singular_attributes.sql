@@ -15,7 +15,6 @@ CREATE TABLE singular_attributes (
   available_exhibition BOOLEAN DEFAULT TRUE NOT NULL,
   available_purchase BOOLEAN DEFAULT TRUE NOT NULL,
   condition artwork_condition DEFAULT 'unknown' NOT NULL,
-  storage_location VARCHAR(255),
   is_framed BOOLEAN DEFAULT FALSE NOT NULL
 );
 
