@@ -4,7 +4,6 @@
 --* The valuation type can be from an auction, an exhibition, an appraisal, or another source.
 --* The valuation's date and amount are also recorded
 
-
 CREATE TYPE  val_type AS ENUM (
   'auction',  -- Amount sold at auction
   'exhibition', -- Amount listed during an exhibition
@@ -22,7 +21,7 @@ CREATE TABLE valuations (
   person_id INT REFERENCES people (id),
 
   amount NUMERIC (10, 2) NOT NULL,
-  valuation_type VARCHAR (100),
+  valuation_type val_type NOT NULL,
   valuation_date DATE,
   valuation_description TEXT,
 
