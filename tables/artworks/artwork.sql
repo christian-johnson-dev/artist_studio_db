@@ -36,6 +36,8 @@ CREATE TABLE artwork (
     artwork_storage_id INT REFERENCES artwork_storage (id),
     CHECK ((category = 'sculpture' AND depth_in > 0) OR (category != 'sculpture' AND (depth_in IS NULL OR depth_in > 0))) 
 );
--- * INDEXES
-CREATE INDEX singular_attributes_id_idx ON artwork (singular_attributes_id)
+-- * INDEXES (catalog_number, series_id, singular_attributes_id, artwork_storage_id)
+CREATE INDEX artwork_series_id_idx ON artwork (series_id);
+CREATE INDEX singular_attributes_id_idx ON artwork (singular_attributes_id);
+CREATE INDEX artwork_storage_id_idx ON artwork (artwork_storage_id);
 -- Path: tables/artworks/artwork.sql
