@@ -8,4 +8,8 @@ CREATE TABLE artwork_support (
   PRIMARY KEY (artwork_id, support_id)
 );
 
+--* Indexes
+CREATE INDEX artwork_support_artwork_id_idx ON artwork_support (artwork_id);
+CREATE INDEX artwork_support_support_id_idx ON artwork_support (support_id);
+
 -- Path: tables/artworks/artwork_support.sql
