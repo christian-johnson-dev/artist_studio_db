@@ -8,7 +8,7 @@ CREATE TABLE series (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
 
   -- * Series info
-  name VARCHAR (255) NOT NULL,
+  name VARCHAR (255) NOT NULL UNIQUE,
   description TEXT,
   year_start INT CHECK (year_start >= 0 AND year_start <= EXTRACT (YEAR FROM CURRENT_DATE)) NOT NULL,
   year_end INT CHECK (year_end >= year_start AND year_end <= EXTRACT (YEAR FROM CURRENT_DATE))
