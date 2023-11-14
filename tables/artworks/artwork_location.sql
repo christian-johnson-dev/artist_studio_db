@@ -1,6 +1,7 @@
 --* The artwork_location table keeps track of the locations of either an artwork or an editioned artwork, along with the organizations or individuals responsible for them. 
 
-CREATE TYPE location_type AS ENUM ('on loan', 
+CREATE TYPE location_type AS ENUM (
+  'on loan', 
   'on consignment', 
   'in storage', 
   'gift', 
